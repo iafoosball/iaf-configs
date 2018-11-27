@@ -1,5 +1,4 @@
 pipeline {
-
     agent any
     environment {
         COMPOSE_PROJECT_NAME = "${env.JOB_NAME}-${env.BUILD_ID}"
@@ -7,7 +6,7 @@ pipeline {
     stages {
         stage ("Build") {
             steps {
-                sh "ls -al"
+                sh "docker network create -d bridge kong_iafoosball"
             }
         }
 }
